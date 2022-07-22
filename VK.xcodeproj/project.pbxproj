@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		14211FCF287D89E200A63D49 /* URLSessionNetworker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14211FCE287D89E200A63D49 /* URLSessionNetworker.swift */; };
-		14211FD3287D8DF500A63D49 /* MainViewController+WKNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14211FD2287D8DF500A63D49 /* MainViewController+WKNavigationDelegate.swift */; };
 		142F1C9F286E1DD50049ACD2 /* ScrollGalleryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142F1C9E286E1DD50049ACD2 /* ScrollGalleryController.swift */; };
 		142F1CA1286E1DF90049ACD2 /* ScrollGalleryController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 142F1CA0286E1DF90049ACD2 /* ScrollGalleryController.xib */; };
 		142F1CA3286E1F8E0049ACD2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142F1CA2286E1F8E0049ACD2 /* ViewController.swift */; };
@@ -31,6 +30,9 @@
 		1490B59A283AA705009F1B66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1490B599283AA705009F1B66 /* Assets.xcassets */; };
 		1490B59D283AA705009F1B66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1490B59B283AA705009F1B66 /* LaunchScreen.storyboard */; };
 		1490B5A7283AA88D009F1B66 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490B5A6283AA88D009F1B66 /* MainViewController.swift */; };
+		14A5738A288871A600EE7EF3 /* Getfriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A57389288871A600EE7EF3 /* Getfriends.swift */; };
+		14A5738C2889BEF500EE7EF3 /* GetPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A5738B2889BEF500EE7EF3 /* GetPhoto.swift */; };
+		14A57390288AC9C700EE7EF3 /* GetGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A5738F288AC9C700EE7EF3 /* GetGroups.swift */; };
 		14B3ABD82870D5450075E17A /* MyFriendsController+NavControlDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B3ABD72870D5450075E17A /* MyFriendsController+NavControlDelegate.swift */; };
 		14B3ABDA2870D6E80075E17A /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B3ABD92870D6E80075E17A /* Animator.swift */; };
 		14B3ABDC2870E1D80075E17A /* AnimatorBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B3ABDB2870E1D80075E17A /* AnimatorBack.swift */; };
@@ -43,11 +45,12 @@
 		14D42D6C284F863900000518 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D42D6B284F863900000518 /* Group.swift */; };
 		14EC82A9285B3EB0005F2AD5 /* LikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EC82A8285B3EB0005F2AD5 /* LikeViewController.swift */; };
 		14EC82AC285B3EDA005F2AD5 /* LikeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14EC82AB285B3EDA005F2AD5 /* LikeViewController.xib */; };
+		CF2B771CF4E4D9D2BB168C06 /* Pods_VK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 491FCED49077618CE54F428F /* Pods_VK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13DAA4C1032C0D5CC323D492 /* Pods-VK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VK.release.xcconfig"; path = "Target Support Files/Pods-VK/Pods-VK.release.xcconfig"; sourceTree = "<group>"; };
 		14211FCE287D89E200A63D49 /* URLSessionNetworker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionNetworker.swift; sourceTree = "<group>"; };
-		14211FD2287D8DF500A63D49 /* MainViewController+WKNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+WKNavigationDelegate.swift"; sourceTree = "<group>"; };
 		142F1C9E286E1DD50049ACD2 /* ScrollGalleryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollGalleryController.swift; sourceTree = "<group>"; };
 		142F1CA0286E1DF90049ACD2 /* ScrollGalleryController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollGalleryController.xib; sourceTree = "<group>"; };
 		142F1CA2286E1F8E0049ACD2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +75,9 @@
 		1490B59C283AA705009F1B66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1490B59E283AA705009F1B66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1490B5A6283AA88D009F1B66 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		14A57389288871A600EE7EF3 /* Getfriends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Getfriends.swift; sourceTree = "<group>"; };
+		14A5738B2889BEF500EE7EF3 /* GetPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPhoto.swift; sourceTree = "<group>"; };
+		14A5738F288AC9C700EE7EF3 /* GetGroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGroups.swift; sourceTree = "<group>"; };
 		14B3ABD72870D5450075E17A /* MyFriendsController+NavControlDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyFriendsController+NavControlDelegate.swift"; sourceTree = "<group>"; };
 		14B3ABD92870D6E80075E17A /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 		14B3ABDB2870E1D80075E17A /* AnimatorBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatorBack.swift; sourceTree = "<group>"; };
@@ -84,6 +90,8 @@
 		14D42D6B284F863900000518 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		14EC82A8285B3EB0005F2AD5 /* LikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeViewController.swift; sourceTree = "<group>"; };
 		14EC82AB285B3EDA005F2AD5 /* LikeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikeViewController.xib; sourceTree = "<group>"; };
+		491FCED49077618CE54F428F /* Pods_VK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C317A3CB6D5A8716FF18E23F /* Pods-VK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VK.debug.xcconfig"; path = "Target Support Files/Pods-VK/Pods-VK.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF2B771CF4E4D9D2BB168C06 /* Pods_VK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,7 +110,6 @@
 			isa = PBXGroup;
 			children = (
 				1490B5A6283AA88D009F1B66 /* MainViewController.swift */,
-				14211FD2287D8DF500A63D49 /* MainViewController+WKNavigationDelegate.swift */,
 			);
 			path = MainViewController;
 			sourceTree = "<group>";
@@ -206,6 +214,8 @@
 			children = (
 				1490B58F283AA702009F1B66 /* VK */,
 				1490B58E283AA702009F1B66 /* Products */,
+				7182D19548B02C200A07A4DD /* Pods */,
+				60188260409FCA942C32AB96 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -220,6 +230,7 @@
 		1490B58F283AA702009F1B66 /* VK */ = {
 			isa = PBXGroup;
 			children = (
+				14A573882888714B00EE7EF3 /* JsonDecoder */,
 				1464115F2876EF150052B34C /* Singleton */,
 				1463A34228509993006BF78A /* Delegate */,
 				1463A34128509956006BF78A /* Structures */,
@@ -231,6 +242,16 @@
 				1490B59E283AA705009F1B66 /* Info.plist */,
 			);
 			path = VK;
+			sourceTree = "<group>";
+		};
+		14A573882888714B00EE7EF3 /* JsonDecoder */ = {
+			isa = PBXGroup;
+			children = (
+				14A57389288871A600EE7EF3 /* Getfriends.swift */,
+				14A5738B2889BEF500EE7EF3 /* GetPhoto.swift */,
+				14A5738F288AC9C700EE7EF3 /* GetGroups.swift */,
+			);
+			path = JsonDecoder;
 			sourceTree = "<group>";
 		};
 		14C119CF284A212B00C8FBCD /* Cell */ = {
@@ -253,6 +274,23 @@
 			path = LikeViewController;
 			sourceTree = "<group>";
 		};
+		60188260409FCA942C32AB96 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				491FCED49077618CE54F428F /* Pods_VK.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7182D19548B02C200A07A4DD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C317A3CB6D5A8716FF18E23F /* Pods-VK.debug.xcconfig */,
+				13DAA4C1032C0D5CC323D492 /* Pods-VK.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -260,9 +298,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1490B5A1283AA705009F1B66 /* Build configuration list for PBXNativeTarget "VK" */;
 			buildPhases = (
+				BD4521AAF61FFB9EAB9AA567 /* [CP] Check Pods Manifest.lock */,
 				1490B589283AA702009F1B66 /* Sources */,
 				1490B58A283AA702009F1B66 /* Frameworks */,
 				1490B58B283AA702009F1B66 /* Resources */,
+				9B799B26F7872218E7AC08E6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -323,6 +363,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9B799B26F7872218E7AC08E6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VK/Pods-VK-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VK/Pods-VK-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VK/Pods-VK-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD4521AAF61FFB9EAB9AA567 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VK-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1490B589283AA702009F1B66 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -336,12 +418,13 @@
 				14B3ABDA2870D6E80075E17A /* Animator.swift in Sources */,
 				14C119D2284A21A100C8FBCD /* CustomTableViewCell.swift in Sources */,
 				14623754284E717100AD9411 /* CustomCollectionViewCell.swift in Sources */,
-				14211FD3287D8DF500A63D49 /* MainViewController+WKNavigationDelegate.swift in Sources */,
 				142F1CA3286E1F8E0049ACD2 /* ViewController.swift in Sources */,
 				1463A336285096FA006BF78A /* GalleryViewController+DelegateFlowLayout.swift in Sources */,
 				1463A33228509678006BF78A /* GalleryViewController+DataSource.swift in Sources */,
+				14A5738A288871A600EE7EF3 /* Getfriends.swift in Sources */,
 				1490B591283AA702009F1B66 /* AppDelegate.swift in Sources */,
 				1490B593283AA702009F1B66 /* SceneDelegate.swift in Sources */,
+				14A57390288AC9C700EE7EF3 /* GetGroups.swift in Sources */,
 				1463A33E28509812006BF78A /* MyGroupViewController+DataSource.swift in Sources */,
 				1463A34028509820006BF78A /* MyGroupViewController+Delegate.swift in Sources */,
 				14D42D6C284F863900000518 /* Group.swift in Sources */,
@@ -353,6 +436,7 @@
 				14D42D6A284F84EC00000518 /* AllGroupViewController.swift in Sources */,
 				1490B5A7283AA88D009F1B66 /* MainViewController.swift in Sources */,
 				14B3ABDC2870E1D80075E17A /* AnimatorBack.swift in Sources */,
+				14A5738C2889BEF500EE7EF3 /* GetPhoto.swift in Sources */,
 				142F1C9F286E1DD50049ACD2 /* ScrollGalleryController.swift in Sources */,
 				14C119CA284A162400C8FBCD /* Friend.swift in Sources */,
 				14B3ABD82870D5450075E17A /* MyFriendsController+NavControlDelegate.swift in Sources */,
@@ -498,6 +582,7 @@
 		};
 		1490B5A2283AA705009F1B66 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C317A3CB6D5A8716FF18E23F /* Pods-VK.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -526,6 +611,7 @@
 		};
 		1490B5A3283AA705009F1B66 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13DAA4C1032C0D5CC323D492 /* Pods-VK.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

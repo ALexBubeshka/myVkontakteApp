@@ -150,7 +150,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="iae-wg-oYa"/>
                     <connections>
-                        <outlet property="buttonEnter" destination="PWm-cF-JiM" id="YZK-0L-OHO"/>
                         <outlet property="firstView" destination="53a-GG-9Pa" id="UWs-BE-Muv"/>
                         <outlet property="loginField" destination="xcU-16-BjL" id="LTQ-dL-JPk"/>
                         <outlet property="nameLabel" destination="EUl-1S-2cC" id="vab-PM-kZW"/>

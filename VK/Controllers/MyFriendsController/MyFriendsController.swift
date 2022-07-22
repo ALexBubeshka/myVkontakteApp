@@ -3,6 +3,8 @@ import UIKit
 
 class MyFriendsController: UIViewController {
     
+    
+    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
@@ -29,6 +31,12 @@ class MyFriendsController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        sendGetRequestFrindsList()
+        sendGetRequestPhotoList()
+        sendGetRequestGroupsList()
+        sendGetRequestFindGroups()
+             
         self.navigationController?.delegate = self
 
         myFriends = fillData()

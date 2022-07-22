@@ -22,15 +22,7 @@ class MainViewController: UIViewController {
    
     @IBOutlet weak var webview: WKWebView!
     
-//    let ToTabBarController = "ToTabBarController"
-//
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//
-//  }
-//
-//
-    override func viewDidLoad() {
+override func viewDidLoad() {
         
         webview.navigationDelegate = self
         
@@ -56,96 +48,151 @@ class MainViewController: UIViewController {
         webview.load(request)
     }
 }
-////        animationView()
-////        secondView.alpha = 0
-////        thirdView.alpha = 0
-////
-////        firstView.layer.cornerRadius = 18
-////        secondView.layer.cornerRadius = 18
-////        thirdView.layer.cornerRadius = 18
-////
-////        firstView.layer.shadowColor = UIColor.black.cgColor
-////        firstView.layer.shadowOffset = CGSize(width: 7, height: 5)
-////        firstView.layer.shadowRadius = 5
-////        firstView.layer.shadowOpacity = 0.5
-////
-////        secondView.layer.shadowColor = UIColor.black.cgColor
-////        secondView.layer.shadowOffset = CGSize(width: 7, height: 5)
-////        secondView.layer.shadowRadius = 5
-////        secondView.layer.shadowOpacity = 0.5
-////
-////        thirdView.layer.shadowColor = UIColor.black.cgColor
-////        thirdView.layer.shadowOffset = CGSize(width: 7, height: 5)
-////        thirdView.layer.shadowRadius = 5
-////        thirdView.layer.shadowOpacity = 0.5
-////
-////        let recognizer = UITapGestureRecognizer (target: self, action: #selector(onTap))
-////        view.addGestureRecognizer(recognizer)
-////
-//    }
-//
-//    func animationView() {
-//        UIView.animate(withDuration: 0.45) { [weak self] in
-//            self?.firstView.alpha = 0
-//            self?.secondView.alpha = 1
-//        } completion: { _ in
-//            UIView.animate(withDuration: 0.45) { [weak self] in
-//                self?.secondView.alpha = 0
-//                self?.thirdView.alpha = 1
-//            } completion: { _ in
-//                UIView.animate(withDuration: 0.45) { [weak self] in
-//                    self?.firstView.alpha = 1
-//                    self?.thirdView.alpha = 0
-//                } completion: { [weak self] _ in
-//                    self?.animationView()
-//                }
-//            }
-//        }
-//    }
-//
-//    @objc func onTap () {
-//        print("tap")
-//        self.view.endEditing(true)
-//    }
-//
-//    @IBAction func loginButPress(_ sender: UIButton) {
-//
-//        if let login = userNameField.text, login == "user", let password = loginField.text, password == "1111" {
-//
-//                let animate1 = CABasicAnimation.init(keyPath: "position.x")
-//                animate1.toValue = -700
-//                animate1.duration = 3
-//                loginField.layer.add(animate1, forKey: nil)
-//                passwordLabel.layer.add(animate1, forKey: nil)
-//
-//                let animate2 = CABasicAnimation.init(keyPath: "position.x")
-//                animate2.toValue = 700
-//                animate2.duration = 2
-//                userNameField.layer.add(animate2, forKey: nil)
-//                nameLabel.layer.add(animate2, forKey: nil)
-//
-//                let animate3 = CABasicAnimation.init(keyPath: "position.y")
-//                animate3.toValue = -700
-//                animate3.duration = 2
-//                vkImage.layer.add(animate3, forKey: nil)
-//                vkLabel.layer.add(animate3, forKey: nil)
-//
-//            UIView.animate(withDuration: 1.3, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0) {[weak self] in
-//                let animate4 = CABasicAnimation.init(keyPath: "position.y")
-//                animate4.toValue = 700
-//                animate4.duration = 2
-//                self?.buttonEnter.frame.origin.y -= 100
-//                self?.buttonEnter.layer.add(animate4, forKey: nil)
-//            } completion: {[weak self] _ in
-//                guard let self = self else {return}
-//               self.performSegue(withIdentifier: self.ToTabBarController, sender: nil)
-//            }
-//    } else {
-//        let alert = UIAlertController(title: "Ошибка", message: "Введены неверные данные пользователя", preferredStyle: .alert)
-//        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-//        alert.addAction(action)
-//        present(alert, animated: true, completion: nil)
-//        }
-//    }
 
+extension MainViewController: WKNavigationDelegate {
+    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
+        
+        decisionHandler(.allow)
+        
+        guard
+            let url = navigationResponse.response.url,
+            url.path == "/blank.html",
+            let fragment = url.fragment
+        else { return }
+        
+        let params = fragment
+            .components(separatedBy: "&")
+            .map { $0.components(separatedBy: "=")}
+            .reduce([String : String](), { partialResult, param in
+              var dict = partialResult
+              let key = param[0]
+              let value = param[1]
+              dict[key] = value
+              return dict
+            })
+        guard
+            let token = params["access_token"]
+        else { return }
+        
+        Session.instance.token = token
+        
+        print(Session.instance.token)
 
+//        Подскажите как сделалть переход без Segue? Ниже код котрый выдает критическую ошибку
+        
+    //    navigationController?.pushViewController(MyFriendsController(), animated: true)
+        
+
+       performSegue(withIdentifier: "ToTabBarController", sender: nil)
+    }
+  
+}
+
+  func sendGetRequestFrindsList() {
+
+  var components = URLComponents(string: "http://api.vk.com/method/friends.get")
+      components?.queryItems = [
+          URLQueryItem(name: "access_token", value: Session.instance.token),
+          URLQueryItem(name: "fields", value: "nickname"),
+          URLQueryItem(name: "order", value: "name"),
+          URLQueryItem(name: "v", value: "5.131")
+      ]
+
+      guard let url = components?.url else { return }
+
+      print (url)
+
+      URLSession.shared.dataTask(with: url) { (data, _, _ ) in
+          guard let data = data else { return }
+
+          do {
+              let decoder = JSONDecoder()
+              let model = try decoder.decode(GetFriendsResponse.self, from: data)
+              print(model)
+          } catch {
+              print(error)
+          }
+      }.resume()
+  }
+
+  func sendGetRequestPhotoList() {
+
+  var components = URLComponents(string: "http://api.vk.com/method/photos.get")
+      components?.queryItems = [
+          URLQueryItem(name: "access_token", value: Session.instance.token),
+          URLQueryItem(name: "album_id", value: "profile"),
+          URLQueryItem(name: "v", value: "5.131")
+      ]
+
+      guard let url = components?.url else { return }
+
+      URLSession.shared.dataTask(with: url) { (data, _, _ ) in
+          guard let data = data else { return }
+
+          do {
+              let decoder = JSONDecoder()
+              let model = try decoder.decode(GetPhotoResponse.self, from: data)
+              print(model)
+
+          } catch {
+              print(error)
+          }
+      }.resume()
+  
+ }
+  func sendGetRequestGroupsList() {
+
+  var components = URLComponents(string: "http://api.vk.com/method/groups.get")
+      components?.queryItems = [
+          URLQueryItem(name: "access_token", value: Session.instance.token),
+          URLQueryItem(name: "extended", value: "1"),
+          URLQueryItem(name: "v", value: "5.131")
+      ]
+
+      guard let url = components?.url else { return }
+
+      print (url)
+      URLSession.shared.dataTask(with: url) { (data, _, _ ) in
+          guard let data = data else { return }
+        
+          do {
+              let decoder = JSONDecoder()
+              let model = try decoder.decode(GetGroupsResponse.self, from: data)
+              print(model)
+
+          } catch {
+              print(error)
+          }
+      }.resume()
+  }
+
+  func sendGetRequestFindGroups() {
+
+  var components = URLComponents(string: "http://api.vk.com/method/groups.search")
+      components?.queryItems = [
+          URLQueryItem(name: "access_token", value: Session.instance.token),
+          URLQueryItem(name: "q", value: "Music"),
+          URLQueryItem(name: "count", value: "1"),
+          URLQueryItem(name: "v", value: "5.131")
+      ]
+
+      guard let url = components?.url else { return }
+
+      print (url)
+      URLSession.shared.dataTask(with: url) { (data, _, _ ) in
+          guard let data = data else { return }
+          
+          do {
+              let decoder = JSONDecoder()
+              let model = try decoder.decode(GetGroupsResponse.self, from: data)
+              print(model)
+
+          } catch {
+              print(error)
+          }
+          
+          let someString = String(data: data, encoding: .utf8)
+          print(someString ?? "no data")
+      }.resume()
+}
